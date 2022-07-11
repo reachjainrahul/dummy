@@ -1,0 +1,19 @@
+name: Unit
+on:
+  workflow_run:
+    workflows: ["Build"]
+    types:
+      - complete
+
+jobs:
+  test-unit:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Go 1.17
+        uses: actions/setup-go@v3
+        with:
+          go-version: 1.17
+          
+      - name: Check if it waited long enough
+        run: sleep 60
