@@ -28,6 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
+          touch ~/file1
           echo Hello, world!
           sleep 300
           
@@ -37,4 +38,6 @@ jobs:
     if: ${{ always() }}
     steps:
       - name: Would this get triggered
-        run : echo "Yes"
+        run : | 
+          ls ~/
+          echo "Yes"
