@@ -1,7 +1,7 @@
 name: Unit
 on:
   workflow_run:
-    workflows: ["Build"]
+    workflows: ["CI"]
     types:
       - complete
 
