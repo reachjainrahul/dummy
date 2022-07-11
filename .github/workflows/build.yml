@@ -30,7 +30,7 @@ jobs:
         run: |
           touch ~/file1
           echo Hello, world!
-          sleep 300
+          sleep 60
           
       - name: That step is cancelled
         if: ${{ always() }}
