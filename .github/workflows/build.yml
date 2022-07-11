@@ -32,6 +32,10 @@ jobs:
           echo Hello, world!
           sleep 300
           
+      - name: That step is cancelled
+        run : |
+          ls ~/
+          
   cancel:
     runs-on: ubuntu-latest
     needs: build
