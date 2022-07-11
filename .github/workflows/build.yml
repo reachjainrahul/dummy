@@ -29,4 +29,10 @@ jobs:
       - name: Run a one-line script
         run: |
           echo Hello, world!
-          sleep 60
+          sleep 300
+          
+  cancel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Would this get triggered
+        run : echo "Yes"
