@@ -33,6 +33,7 @@ jobs:
           sleep 300
           
       - name: That step is cancelled
+        if: ${{ always() }}
         run : |
           ls ~/
           
