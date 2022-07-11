@@ -33,6 +33,7 @@ jobs:
           
   cancel:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Would this get triggered
         run : echo "Yes"
