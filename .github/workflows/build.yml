@@ -27,15 +27,20 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
+        env:
+          MY_VAR: ${{ secrets.TEST_VAR }}
         run: |
           touch ~/file1
           echo Hello, world!
-          sleep 60
+          sleep 10
           
       - name: That step is cancelled
         if: ${{ always() }}
+        env:
+           MY_VAR: ${{ secrets.TEST_VAR }}
         run : |
           echo "Previous step is cancelled"
+          echo "${MY_VAR}"
           ls ~/
           
   cancel:
